@@ -10,7 +10,7 @@ body {
 .slider {
     margin-top: 3%;
     border: 2px dashed #fff;
-    max-width: 90%;
+    max-width: 100vh;
     height: 50%;
     overflow: hidden;
 }
