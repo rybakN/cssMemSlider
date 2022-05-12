@@ -5,26 +5,19 @@
 
 body {
     background-color: rgb(72, 78, 78);
-    align-content: center;
 }
 
 .slider {
+    margin-top: 3%;
+    border: 2px dashed #fff;
     max-width: 90%;
     height: 50%;
     overflow: hidden;
-    border: 3px solid #fff;
 }
 
 .center {
     margin-left: auto;
     margin-right: auto;
-}
-
-.text {
-    display: none;
-    font-size: 1.5rem;
-    color: #fff;
-    margin: 0 12% 0 2%;
 }
 
 .navigation {
@@ -35,8 +28,7 @@ body {
 }
 
 .bar {
-    position: relative;
-    transform: translate(0, 5%);
+    display: inline-block;
     height: 10px;
     width: 30px;
     cursor: pointer;
@@ -44,7 +36,7 @@ body {
     opacity: 0.7;
     border: 10px solid rgb(72, 78, 78);
     border-radius: 50px;
-    transition: all .4s ease;
+    transition: all .6s linear;
 }
 
 .bar:hover {
@@ -61,12 +53,14 @@ input[name="radio"] {
     height: 50%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
 }
 
 .slide {
     width: 25%;
     height: 100%;
-    transition: all 0.6s ease;
+    transition: all 0.6s linear;
 }
 
 .slide img {
@@ -74,69 +68,122 @@ input[name="radio"] {
     height: 100%;
 }
 
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-right: 75%;
+}
+
+.content__text {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 400%;
+}
+
+.button {
+    display: flex;
+}
+
+.text {
+    position: relative;
+    width: 25%;
+    opacity: 0;
+    font-size: 1.2rem;
+    color: #fff;
+    white-space: nowrap;
+}
 
 
 #r1:checked ~ .s1 {
-    margin-left: 0;
+    margin-left: -75%;
 }
 
-#r1:checked ~ .bar1 {
+#r1:checked ~ .s4 {
+    margin-right: 75%;
+}
+
+#r1:checked ~ .content > .button > .bar1 {
     background-color: aqua;
 }
 
-#r1:checked ~ .tx1 {
+#r1:checked ~ .content > .content__text > .tx1 {
     display: block;
+    margin-left: 3%;
+    opacity: 1;
+    transition: all .6s ease;
+}
+
+#r1:checked ~ .content > .content__text > .tx1 {
+    margin-left: 3%;
 }
 
 
 
 #r2:checked ~ .s1 {
-    margin-left: -25%;
-}
-
-#r2:checked ~ .s4 {
-    margin-right: 25%;
-}
-
-#r2:checked ~ .bar2 {
-    background-color: aqua;
-}
-#r2:checked ~ .tx2 {
-    display: block;
-}
-
-
-
-#r3:checked ~ .s1 {
     margin-left: -50%;
 }
 
-#r3:checked ~ .s4 {
+#r2:checked ~ .s4 {
     margin-right: 50%;
 }
 
-#r3:checked ~ .bar3 {
+#r2:checked ~ .content > .button > .bar2 {
+    background-color: aqua;
+}
+#r2:checked ~ .content > .content__text > .tx2 {
+    display: block;
+    opacity: 1;
+    transition: all .6s ease;
+}
+
+#r2:checked ~ .content > .content__text > .tx1 {
+    margin-left: -22%;
+}
+
+
+#r3:checked ~ .s1 {
+    margin-left: -25%;
+}
+
+#r3:checked ~ .s4 {
+    margin-right: 25%;
+}
+
+#r3:checked ~ .content > .button > .bar3 {
     background-color: aqua;
 }
 
-#r3:checked ~ .tx3 {
+#r3:checked ~ .content > .content__text > .tx3 {
     display: block;
+    opacity: 1;
+    transition: all .6s ease;
 }
 
+#r3:checked ~ .content > .content__text > .tx1 {
+    margin-left: -47%;
+}
 
 
 #r4:checked ~ .s1 {
-    margin-left: -75%;
+    margin-left: 0%;
 }
 
 #r4:checked ~ .s4 {
-    margin-right: 75%;
+    margin-right: 0%;
 }
 
-#r4:checked ~ .bar4 {
+#r4:checked ~ .content > .button > .bar4 {
     background-color: aqua;
 }
 
-#r4:checked ~ .tx4 {
+#r4:checked ~ .content > .content__text > .tx4 {
     display: block;
+    opacity: 1;
+    transition: all .6s ease;
+}
+#r4:checked ~ .content > .content__text > .tx1 {
+    margin-left: -72%;
 }
