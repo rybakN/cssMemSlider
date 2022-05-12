@@ -3,13 +3,17 @@
     margin: 0;
 }
 
+html {
+    font-size: 10px;
+}
+
 body {
     background-color: rgb(72, 78, 78);
 }
 
 .slider {
     margin-top: 3%;
-    border: 2px dashed #fff;
+    border: 1rem dashed rgb(72, 78, 78);
     max-width: 100vh;
     height: 50%;
     overflow: hidden;
@@ -20,28 +24,26 @@ body {
     margin-right: auto;
 }
 
-.navigation {
-    width: 100%;
-    margin: 10px 0;
-    display: flex;
-    height: 10%;
-}
-
 .bar {
     display: inline-block;
-    height: 10px;
-    width: 30px;
+    height: 1rem;
+    width: 3rem;
     cursor: pointer;
     background-color: #ddd;
     opacity: 0.7;
-    border: 10px solid rgb(72, 78, 78);
-    border-radius: 50px;
+    border: 1rem solid rgb(72, 78, 78);
+    border-radius: 5rem;
     transition: all .6s linear;
 }
 
 .bar:hover {
     background-color: aqua;
     transform: scale(1.1);
+}
+
+.bar:active {
+    background-color: rgb(255, 0, 0);
+    transition: all .01s linear;
 }
 
 input[name="radio"] {
@@ -88,11 +90,11 @@ input[name="radio"] {
 }
 
 .text {
-    position: relative;
     width: 25%;
     opacity: 0;
-    font-size: 1.2rem;
+    font-size: 1.9rem;
     color: #fff;
+    transition: all .6s ease;
     white-space: nowrap;
 }
 
@@ -111,13 +113,12 @@ input[name="radio"] {
 
 #r1:checked ~ .content > .content__text > .tx1 {
     display: block;
-    margin-left: 3%;
     opacity: 1;
     transition: all .6s ease;
 }
 
 #r1:checked ~ .content > .content__text > .tx1 {
-    margin-left: 3%;
+    margin-left: 0%;
 }
 
 
@@ -140,7 +141,7 @@ input[name="radio"] {
 }
 
 #r2:checked ~ .content > .content__text > .tx1 {
-    margin-left: -22%;
+    margin-left: -25%;
 }
 
 
@@ -163,7 +164,7 @@ input[name="radio"] {
 }
 
 #r3:checked ~ .content > .content__text > .tx1 {
-    margin-left: -47%;
+    margin-left: -50%;
 }
 
 
@@ -185,5 +186,23 @@ input[name="radio"] {
     transition: all .6s ease;
 }
 #r4:checked ~ .content > .content__text > .tx1 {
-    margin-left: -72%;
+    margin-left: -75%;
+}
+
+@media screen and (max-width: 600px){
+    .content {
+        flex-wrap: wrap;
+    }
+    .content__text {
+        order: 2;
+    }
+    .button {
+        justify-content: center;
+        width: 100%;
+        order: 1;
+    }
+
+    .text {
+        font-size: 1.6rem;
+    }
 }
